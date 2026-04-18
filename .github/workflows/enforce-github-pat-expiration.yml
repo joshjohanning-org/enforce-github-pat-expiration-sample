@@ -11,8 +11,8 @@ jobs:
     - uses: actions/create-github-app-token@v3
       id: app-token
       with:
-        client-id: ${{ vars.APP_CLIENT_ID }} # use a PAT with `admin:org` permissions or a GitHub app token
-        private-key: ${{ secrets.PRIVATE_KEY }}
+        client-id: ${{ vars.GITHUB_APP_CLIENT_ID }} # use a PAT with `admin:org` permissions or a GitHub app token
+        private-key: ${{ secrets.GITHUB_APP_PRIVATE_KEY }}
         owner: joshjohanning-org-saml # ${{ github.repository_owner }}
     - name: Check and Revoke PATs
       uses: joshjohanning/enforce-github-pat-expiration@v1
