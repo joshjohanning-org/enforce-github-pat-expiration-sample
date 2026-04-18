@@ -8,10 +8,10 @@ jobs:
   check-pats:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/create-github-app-token@v1
+    - uses: actions/create-github-app-token@v3
       id: app-token
       with:
-        app-id: ${{ vars.APP_ID }} # use a PAT with `admin:org` permissions or a GitHub app token
+        client-id: ${{ vars.APP_CLIENT_ID }} # use a PAT with `admin:org` permissions or a GitHub app token
         private-key: ${{ secrets.PRIVATE_KEY }}
         owner: joshjohanning-org-saml # ${{ github.repository_owner }}
     - name: Check and Revoke PATs
